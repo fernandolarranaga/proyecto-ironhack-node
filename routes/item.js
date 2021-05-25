@@ -19,10 +19,11 @@ router.post('/', ensureLoggedIn('/login'), upload.single('photo'),(req, res, nex
     title : req.body.title,
     description:req.body.description,
     _creator: req.user._id,
+    paginas   : req.body.paginas,
     goal : req.body.goal,
-    backerCount: req.body.goal,
-    category:req.body.category, // Presta atencion si quieres poner Category!!!
-    deadline:req.body.deadline,
+  //  backerCount: req.body.goal,
+  //  category:req.body.category, // Presta atencion si quieres poner Category!!!
+    //deadline:req.body.deadline,
 
     pic_path: `/uploads/${req.file.filename}`,
     pic_name: req.file.originalname
@@ -65,7 +66,7 @@ router.post('/:id', [ensureLoggedIn('/login'),upload.single('photo'), authorizeI
   const updates = {
     title: req.body.title,
     description: req.body.description,
-
+    paginas: req.body.paginas,
     goal: req.body.goal,
     deadline: req.body.deadline,
 
@@ -88,5 +89,7 @@ router.post('/:id/delete', (req, res, next) => {
   });
 
 });
+
+
 
 module.exports = router;

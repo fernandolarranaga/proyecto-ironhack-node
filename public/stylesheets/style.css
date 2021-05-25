@@ -1,11 +1,11 @@
-h1{ font-size:28px;}
-h2{ font-size:26px;}
+h1{ font-size:29px;}
+h2{ font-size:28px;}
 h3{ font-size:18px;}
 h4{ font-size:16px;}
 h5{ font-size:15px;}
 h6{ font-size:12px;}
 h7{ font-size: 19px; color:white; }
-h1,h2,h3, h4, h5,h6{ color:#563D64;}
+h1,h2,h3, h4, h5,h6{ color:black;} /*#563D64;*/
 small{ font-size:10px;}
 b, strong{ font-weight:bold;}
 a{ text-decoration: none; }
@@ -309,7 +309,7 @@ form:after {
 	}
 
 .fondo{
-	width: 60%;
+	width: 80%;
 	margin: auto;
 	background-color: GAINSBORO;
 	opacity: 0.9;
@@ -325,18 +325,26 @@ body{
 
  margin-top: 100px;
  background-image: url(../imagenes/venta1.jpg);
- background-repeat: repeat-ys;
- background-size: 1735px 940px;
+ background-repeat: no-repeat;
+ background-color: black;
+
 
 }
+
+.item-description{
+	margin: 160px;
+	margin-top: 50px;
+	width: 50%;
+}
+
 .pres{
 	text-align: center;
 }
 
 
 nav{
- /*background-color: black;*/
- background-image: url(../imagenes/menu.jpg);
+ background-color: black;
+ /*background-image: url(../imagenes/menu.jpg);*/
  position: fixed;
  width: 100%;
 
@@ -356,10 +364,12 @@ nav{
 
 .col-sm-4.item-info{
 	margin-left: 10px;
-	margin-top: 20px;
+	margin-top: 0px;
 }
 
-
+#infoo{
+	margin-top: -50px;
+}
 
 
 .item-info-wrapper{
@@ -369,7 +379,7 @@ nav{
 .logo-spotify{
  float: left;
  margin-top: 5px;
- height: 60px;
+ height: 75px;
 
 
 }
@@ -381,7 +391,7 @@ nav{
 .lista{
  float: right;
  padding-top: 20px;
- margin: 0 auto;
+ margin: 10px auto;
 }
 
 .lista > li{
@@ -503,7 +513,8 @@ a{
 	}
 
 	.fondo{
-		width: 95%;
+		width: 75%;
+
 	}
 	h5{
 		margin-left:-50px;
@@ -549,4 +560,12 @@ p {
 	 font-size: 14px;
 	 margin-right: 100px;
 	}
+	.item-description{
+		margin: 0;
+		margin-top: 0;
+		width:100%;
+	}
+}
+#footer{
+
 }

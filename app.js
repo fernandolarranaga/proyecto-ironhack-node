@@ -13,7 +13,7 @@ const itemRoutes = require('./routes/item');
 const cuponRoutes = require ('./routes/cupon')
 
 // Connect with database
-mongoose.connect('mongodb://localhost/proyecto2');
+mongoose.connect('mongodb://localhost/editorial2');
 
 // Express instance
 var app = express();
@@ -38,7 +38,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/node_modules', express.static(path.join(__dirname, 'node_modules/')))
+app.use('/node_modules', express.static(path.join(__dirname, 'node_modules/')));
 
 app.use('/items', itemRoutes);
 app.use('/', index);

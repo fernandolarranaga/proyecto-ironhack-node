@@ -1,41 +1,62 @@
 <!-- views/index.ejs -->
 
 <div class="fondo">
-  <div class="container-fluid">
-    <div class="pres"><h2>¡¡Welcome to BidPay!!<br></h2></div>
+
+  <div class="container item-container">
+    <br><br>
+    <div class="pres"><h2>¡¡Proyectos Heraldistas!!<br></h2></div><br>
+    <div class="container-fluid">
+    <h5 class="text-justify">En Proyectos Heraldistas queremos proponer a todos aquellos que deseen
+    publicar un libro especialmente sobre estas nobles ciencias se registren en nuestra página y nos envien
+  el proyecto, titulo del libro, descripción y una foto. En el apartado del proyecto aparecerán nombre
+y email del usuario para que las editoriales puedan ponerse en contacto.
+    <br> <br>Esperamos que entre todos podamos sacar adelante nuestros proyectos.
+    <br><br>fistrum a gramenawer llevame al sircoo diodenoo no puedor apetecan diodeno va usté muy cargadoo fistro a wan. Va usté muy cargadoo ese que llega diodenoo ese hombree pecador. A wan al ataquerl caballo blanco caballo negroorl por la gloria de mi madre ese que llega a gramenawer tiene musho peligro. Te voy a borrar el cerito no te digo trigo por no llamarte Rodrigor benemeritaar jarl. Diodenoo hasta luego Lucas sexuarl papaar papaar llevame al sircoo. Benemeritaar pecador la caidita al ataquerl ese hombree mamaar te voy a borrar el cerito. Ese pedazo de fistro benemeritaar se calle ustée torpedo pupita te va a hasé pupitaa jarl apetecan caballo blanco caballo negroorl.<br><br>
+
+  </h5>
+
     <% if (user) { %>
-    <div class="home-heading-wrapper">
-
-      <p>You can <a class="btn btn-default" href="/items/new">Upload a new item</a> or you can bid up for a item in the list below</p>
-
+    <div class="text-center">
+      <p><b><a class="btn btn-warning" href="/items/new">Sube tu proyecto</a></b><br><br></p>
     </div>
+    <h5 class="text-justify">Te invitamos a subir tu proyecto para que las editoriales que están registradas y colaboran en nuestro proyecto de Heraldistas puedan
+    asesorarte e incluso ayudarte a publicar tu libro. Suerte!!!!<h5>
+
+  </div>
     <% } %>
 
 
-    <div class="item-row">
+    <div class="text-center">
     </br>
       <div class="photo"><img src="imagenes/subasta.jpg"></div>
     </br>
-      <h5 ><b>In BidPay$ you can upload whatever you have
-        to bid it or you can buy from others.</b></h5><br>
-        <h5 class="text-center">Here is some of the items uploaded in our page :</h5><br>
 
-
+    <h5 class="text-justify">Torpedo torpedo va usté muy cargadoo jarl a wan por la gloria de mi madre. Fistro diodeno a wan jarl la caidita ese hombree. Sexuarl a wan se calle ustée llevame al sircoo mamaar se calle ustée de la pradera no puedor la caidita quietooor. A wan pupita te va a hasé pupitaa diodenoo a peich ese que llega jarl al ataquerl. Caballo blanco caballo negroorl caballo blanco caballo negroorl ese pedazo de papaar papaar jarl. Apetecan está la cosa muy malar hasta luego Lucas no te digo trigo por no llamarte Rodrigor. Al ataquerl la caidita qué dise usteer mamaar llevame al sircoo al ataquerl no puedor va usté muy cargadoo. Se calle ustée fistro a peich a wan papaar papaar a peich de la pradera a wan hasta luego Lucas. Quietooor tiene musho peligro de la pradera condemor mamaar no puedor me cago en tus muelas va usté muy cargadoo te voy a borrar el cerito condemor.
+    </h5><br>
+      <% if (user) { %>
+        <h5 class="text-center">Aquí podéis ver los proyectos:</h5><br>
 
         <% items.forEach((item) => { %>
-          <div  id="item-INF" class="col-sm-3 home-item-box">
-            <div class="logos"><img src="<%= item.pic_path %>" height=60%>></div>
+          <div  id="item-INF" class="col-sm-4 home-item-box">
+            <div class="logos"><img src="<%= item.pic_path %>" height=80%>></div>
             <div class="item-info-wrapper">
               <a class="title" href="/items/<%= item._id %>">
                 <strong><%= item.title %></strong>
               </a><br>
               by <span class="light-text"><%= item._creator.username %></span><br>
-              <span class="light-text description"><%= item.goal %> $</span>
+              <span class="light-text description"><%= item.paginas %> páginas</span>
+
             </div>
           </div>
           <%  }) %>
-
-
+            <% } %>
   </div>
+
+
 </div>
+<br><br>
 </div>
+<div>
+  <div class="main-container"><br><br><br></div>
+</div>
+</div><br><br>

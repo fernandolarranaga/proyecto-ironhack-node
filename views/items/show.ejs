@@ -4,90 +4,40 @@
 
     <div class="row" style="text-align:center">
     <div class="col-sm-2">
-      <img src="<%= item.pic_path %>" height=170%>
+
       <strong></strong>
     </div>
-    <div class="col-sm-10">
-      <h1 style="text-decoration:underline"><%= item.title %></h1>
-      <h2 class="item-category"><%= item.category %></h2>
-      <p class="item-description"><%= item.description %></p>
-    </div>
+    <div class="row">
+      <div class="col-sm-16">
+        <img class="item-image" src="<%= item.image %>">
+      </div>
+<br><br>
+      <div id="infoo"class="col-sm-12 item-info">
+        Este producto ha sido creado por <strong><%= item._creator.username %></strong> <br>para contactar, su email es el siguiente:  <strong><%= item._creator.email %></strong>
+<br><br>        <a class="btn btn-warning" style="color:black;" href="/items/<%= item._id%>/edit">Editar Item </a>
+    <br><br>
+        <div class="item-progress">
+          <progress value="<%= item.totalPledged %>" max="<%= item.goal %>"></progress>
+        </div>
+        <div class="item-pledged">
+        <!--  <span class="item-total">$<%= item.totalPledged %></span><br> -->
+        <div class="container-fluid">
+  <img src="<%= item.pic_path %>" height=290%><br>
+          <h4 style="text-decoration:underline"><%= item.title %></h4><br>
+
+          <h2 class="item-category"><%= item.category %></h2><br>
+          <p class="text-justify"><strong> Número de páginas aproximadas del proyecto:</ststrong> <%= item.paginas %></p>
+            <p class="text-justify" ><strong>El precio aproximado sería de:</strong> <%= item.goal %> euros</p>
+          <p class="text-justify"><strong>Descripción del proyecto</strong></p><p class="text-justify"><%= item.description %></p>
+        </div>
+
+        </div>
+        
+  </br> </br>
+      </div>
+      <br>
   </div>
-  <div class="row">
-    <div class="col-sm-8">
-      <img class="item-image" src="<%= item.image %>">
-    </div>
-    <div id="infoo"class="col-sm-4 item-info">
-      By: <strong><%= item._creator.username %></strong>
-      <div class="item-progress">
-        <progress value="<%= item.totalPledged %>" max="<%= item.goal %>"></progress>
-      </div>
-      <div class="item-pledged">
-      <!--  <span class="item-total">$<%= item.totalPledged %></span><br> -->
-        <span class="light-text">
-          Total of cupons:
-          <%= item.goal %></span>
-        </span>
-      </div>
-      <div class="item-backers">
-        Left of cupons to sell:
-        <strong class="large-strong"><%= item.backerCount %></strong><br>
-        <span class="light-text">backers</span>
-      </div>
-      <div class="item-time">
-        <strong class="large-strong"><%= item.timeRemaining.days %></strong><br>
-        <span class="light-text"><%= item.timeRemaining.unit  %> to go.</span>
-      </div>
-      <a style="color:black;" href="/items/<%= item._id%>/add">Añadir Cupon</a>
-      <a style="color:black;" href="/items/<%= item._id%>/edit">Editar Item </a>
-    </br> </br>
-      <span> Time left to decide a winner: <p style="color:red; text-decoration:underline; font-size:20px" id="demo"></p></span> <!--Este es el clock de cuenta atras -->
-
-    </div>
-
-
-
     </div>
 </div>
-
 </div>
 </div>
-
-
-<script>
-var currentTime = <%- JSON.stringify(item); %>
-
-
-var countDownDate = new Date(currentTime.deadline).getTime();
-
-var x = setInterval(function() {
-
-    var now = new Date().getTime();
-
-    var distance = countDownDate - now;
-    if (distance < 0) {
-      var btn = document.createElement("a");
-      var t = document.createTextNode("See who is the winner");
-      btn.href = "/items/<%= item._id%>/winner";
-      btn.appendChild(t);
-      document.getElementById("infoo").appendChild(btn);
-    }
-
-    // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    // Output the result in an element with id="demo"
-    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ";
-
-    // If the count down is over, write some text
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "ENDED";
-    }
-}, 1000);
-
-</script>

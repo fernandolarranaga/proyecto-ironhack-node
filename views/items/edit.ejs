@@ -19,6 +19,9 @@
           <label for="goal"></label>
           <input type="text" name="goal" class="form-control" placeholder="Price" value="<%= item.goal %>">
 
+          <label for="paginas"></label>
+          <input type="text" name="paginas" class="form-control" placeholder="Paginas" value="<%= item.paginas %>">
+
 
           <label for="description"></label>
           <textarea
@@ -29,21 +32,13 @@
             <%= item.description %>
           </textarea >
 
-
-
-          <label for="deadline"></label>
-          <input type="date" name="deadline" class="form-control" placeholder="Deadline" value="<%= item.inputFormattedDate %>">
-
-
-            
-
-
               <input type="submit" value="Sign Up" />
       </form>
-    </form><br>
+    </form>
        <form action="/items/<%= item._id %>/delete" method="POST">
-         <button type="submit">Delete Product</button>
+         <button type="submit" class="btn btn-primary">Delete Product</button>
        </form><br>
-
+       
+<br><br>
     </div>
   </div>

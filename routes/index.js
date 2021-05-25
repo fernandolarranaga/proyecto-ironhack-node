@@ -12,7 +12,9 @@ router.get('/', function(req, res, next) {
       .populate('_creator')
       .exec( (err, items) => {
           res.render('index', { items});
+
       });
 });
+
 
 module.exports = router;

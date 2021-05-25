@@ -34,7 +34,7 @@ router.get('/:id', (req, res, next) => {
 });
 
 
-router.get('/:id/edit', ensureLoggedIn('/login'), (req, res, next) => {
+/*router.get('/:id/edit', ensureLoggedIn('/login'), (req, res, next) => {
   User.findById(req.params.id, (err, user) => {
     if (err)       { return next(err) }
     if (!user) { return next(new Error("404")) }
@@ -58,7 +58,7 @@ router.post('/:id/edit', ensureLoggedIn('/login'), (req, res, next) => {
 
     return res.redirect('/');
   });
-});
+});*/
 
 router.post('/:id/edit/delete', (req, res, next) => {
   const id = req.params.id;

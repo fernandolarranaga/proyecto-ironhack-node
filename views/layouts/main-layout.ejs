@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Puja y Gana</title>
+    <title>Heraldry Proyect</title>
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="/node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
@@ -16,16 +16,19 @@
           <div class="logo-spotify">
                 <a href="/"><img src="/imagenes/maza3.png" ></a>
           </div>
-          <ul class="lista">
+          <ul class="lista" style="  margin-right:150px">
 
                   <% if (!user) { %>
-                      <li> <a  href="/signup"> Sign Up </a> </li>
-                      <li> <a href="/login"> Log In </a> </li>
+                      <li> <a  class="btn btn-info" href="/signup"> Sign Up </a> </li>
+                      <li> <a class="btn btn-success" href="/login"> Log In </a> </li>
                   <% } else { %>
-                      <span style="color:red; font-size:12px; margin-right:50px"> Welcome <%= user.username %> !! You have <%= user.cupons %> </span>
+                      <li style="color:blue; font-size:14px; margin-right:150px">Bienvenido, "<%= user.username %>", estás conectado </li>
                       <!-- <img src="<%= user.imgUrl %>"/> -->
-                      <li><a href="/<%= user._id %>/edit">Profile</a></li>
-                      <li> <a href="/logout"> Log Out </a> </li>
+<div class="btn-group btn-group-sm" role="group">
+                           <a class="btn btn-danger" href="/logout">Desconéctate </a>
+
+                      </div>
+                        </div>
                   <% } %>
           </ul>
         </nav>
@@ -33,5 +36,6 @@
         <%- body -%>
     </div>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+
 </body>
 </html>
